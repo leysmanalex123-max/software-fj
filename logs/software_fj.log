@@ -1,0 +1,156 @@
+2026-11-20 02:54:33 | INFO | Inicio de la aplicación Software FJ.
+2026-11-20 02:54:33 | INFO | Cliente registrado: Leysman Riaño
+2026-11-20 02:54:33 | ERROR | Error controlado en operación 2: El correo electrónico no tiene un formato válido.
+Traceback (most recent call last):
+  File "/mnt/data/Software_FJ/main.py", line 51, in ejecutar_operacion
+    resultado = funcion()
+  File "/mnt/data/Software_FJ/main.py", line 85, in <lambda>
+    lambda: Cliente("C002", "Ana Pérez", "correo-invalido", "3111234567")
+            ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/Software_FJ/clientes.py", line 12, in __init__
+    self.correo = correo
+    ^^^^^^^^^^^
+  File "/mnt/data/Software_FJ/clientes.py", line 34, in correo
+    raise ValidacionError("El correo electrónico no tiene un formato válido.")
+excepciones.ValidacionError: El correo electrónico no tiene un formato válido.
+2026-11-20 02:54:33 | INFO | Cliente registrado: Carlos Gómez
+2026-11-20 02:54:33 | INFO | Servicio registrado: Sala de reuniones
+2026-11-20 02:54:33 | INFO | Servicio registrado: Computador portátil
+2026-11-20 02:54:33 | INFO | Servicio registrado: Asesoría en programación
+2026-11-20 02:54:33 | INFO | Reserva R001 creada para el cliente Leysman Riaño.
+2026-11-20 02:54:33 | INFO | Reserva agregada al sistema: R001
+2026-11-20 02:54:33 | INFO | Reserva R001 confirmada.
+2026-11-20 02:54:33 | INFO | Reserva R001 procesada. Total: $107100.00
+2026-11-20 02:54:33 | INFO | Finalizó el intento de procesamiento de reserva R001.
+2026-11-20 02:54:33 | INFO | Reserva R002 creada para el cliente Carlos Gómez.
+2026-11-20 02:54:33 | INFO | Reserva agregada al sistema: R002
+2026-11-20 02:54:33 | ERROR | Error controlado en operación 8: La reserva debe estar confirmada antes de procesarse.
+Traceback (most recent call last):
+  File "/mnt/data/Software_FJ/main.py", line 51, in ejecutar_operacion
+    resultado = funcion()
+  File "/mnt/data/Software_FJ/main.py", line 126, in op8
+    return reserva.procesar()
+           ~~~~~~~~~~~~~~~~^^
+  File "/mnt/data/Software_FJ/reservas.py", line 51, in procesar
+    raise EstadoReservaError("La reserva debe estar confirmada antes de procesarse.")
+excepciones.EstadoReservaError: La reserva debe estar confirmada antes de procesarse.
+2026-11-20 02:54:33 | ERROR | Error controlado en operación 9: La duración de la reserva debe ser positiva.
+Traceback (most recent call last):
+  File "/mnt/data/Software_FJ/main.py", line 51, in ejecutar_operacion
+    resultado = funcion()
+  File "/mnt/data/Software_FJ/main.py", line 132, in <lambda>
+    lambda: Reserva("R003", cliente1, asesoria, -2)
+            ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/Software_FJ/reservas.py", line 18, in __init__
+    raise ValidacionError("La duración de la reserva debe ser positiva.")
+excepciones.ValidacionError: La duración de la reserva debe ser positiva.
+2026-11-20 02:54:33 | INFO | Servicio registrado: Sala ocupada
+2026-11-20 02:54:33 | INFO | Reserva R004 creada para el cliente Leysman Riaño.
+2026-11-20 02:54:33 | INFO | Reserva agregada al sistema: R004
+2026-11-20 02:54:33 | ERROR | Error controlado en operación 10: El servicio 'Sala ocupada' no está disponible.
+Traceback (most recent call last):
+  File "/mnt/data/Software_FJ/main.py", line 51, in ejecutar_operacion
+    resultado = funcion()
+  File "/mnt/data/Software_FJ/main.py", line 142, in op10
+    reserva.confirmar()
+    ~~~~~~~~~~~~~~~~~^^
+  File "/mnt/data/Software_FJ/reservas.py", line 39, in confirmar
+    self._servicio.verificar_disponibilidad()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/mnt/data/Software_FJ/servicios.py", line 33, in verificar_disponibilidad
+    raise ServicioNoDisponibleError(
+        f"El servicio '{self.nombre}' no está disponible."
+    )
+excepciones.ServicioNoDisponibleError: El servicio 'Sala ocupada' no está disponible.
+2026-11-20 02:54:33 | INFO | Reserva R005 creada para el cliente Carlos Gómez.
+2026-11-20 02:54:33 | INFO | Reserva agregada al sistema: R005
+2026-11-20 02:54:33 | INFO | Reserva R005 cancelada.
+2026-11-20 02:54:33 | ERROR | Error controlado en operación 12: Impuesto y descuento deben estar entre 0 y 1.
+Traceback (most recent call last):
+  File "/mnt/data/Software_FJ/main.py", line 51, in ejecutar_operacion
+    resultado = funcion()
+  File "/mnt/data/Software_FJ/main.py", line 157, in <lambda>
+    lambda: sala.calcular_costo(2, impuesto=1.5)
+            ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/mnt/data/Software_FJ/servicios.py", line 48, in calcular_costo
+    raise ValidacionError("Impuesto y descuento deben estar entre 0 y 1.")
+excepciones.ValidacionError: Impuesto y descuento deben estar entre 0 y 1.
+2026-11-20 02:54:33 | INFO | Finalización de la demostración Software FJ.
+2026-11-19 22:49:53 | INFO | Inicio de la aplicación Software FJ.
+2026-11-19 22:49:53 | INFO | Cliente registrado: Leysman Riaño
+2026-11-19 22:49:53 | ERROR | Error controlado en operación 2: El correo electrónico no tiene un formato válido.
+Traceback (most recent call last):
+  File "c:\Users\usuario\Downloads\Software_FJ_Proyecto_Completo\Software_FJ\main.py", line 51, in ejecutar_operacion
+    resultado = funcion()
+  File "c:\Users\usuario\Downloads\Software_FJ_Proyecto_Completo\Software_FJ\main.py", line 85, in <lambda>
+    lambda: Cliente("C002", "Ana Pérez", "correo-invalido", "3111234567")
+            ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\usuario\Downloads\Software_FJ_Proyecto_Completo\Software_FJ\clientes.py", line 12, in __init__
+    self.correo = correo
+    ^^^^^^^^^^^
+  File "c:\Users\usuario\Downloads\Software_FJ_Proyecto_Completo\Software_FJ\clientes.py", line 34, in correo
+    raise ValidacionError("El correo electrónico no tiene un formato válido.")
+excepciones.ValidacionError: El correo electrónico no tiene un formato válido.
+2026-11-19 22:49:53 | INFO | Cliente registrado: Carlos Gómez
+2026-11-19 22:49:53 | INFO | Servicio registrado: Sala de reuniones
+2026-11-19 22:49:53 | INFO | Servicio registrado: Computador portátil
+2026-11-19 22:49:53 | INFO | Servicio registrado: Asesoría en programación
+2026-11-19 22:49:53 | INFO | Reserva R001 creada para el cliente Leysman Riaño.
+2026-11-19 22:49:53 | INFO | Reserva agregada al sistema: R001
+2026-11-19 22:49:53 | INFO | Reserva R001 confirmada.
+2026-11-19 22:49:53 | INFO | Reserva R001 procesada. Total: $107100.00
+2026-11-19 22:49:53 | INFO | Finalizó el intento de procesamiento de reserva R001.
+2026-11-19 22:49:53 | INFO | Reserva R002 creada para el cliente Carlos Gómez.
+2026-11-19 22:49:53 | INFO | Reserva agregada al sistema: R002
+2026-11-19 22:49:53 | ERROR | Error controlado en operación 8: La reserva debe estar confirmada antes de procesarse.
+Traceback (most recent call last):
+  File "c:\Users\usuario\Downloads\Software_FJ_Proyecto_Completo\Software_FJ\main.py", line 51, in ejecutar_operacion
+    resultado = funcion()
+  File "c:\Users\usuario\Downloads\Software_FJ_Proyecto_Completo\Software_FJ\main.py", line 126, in op8
+    return reserva.procesar()
+           ~~~~~~~~~~~~~~~~^^
+  File "c:\Users\usuario\Downloads\Software_FJ_Proyecto_Completo\Software_FJ\reservas.py", line 51, in procesar
+    raise EstadoReservaError("La reserva debe estar confirmada antes de procesarse.")
+excepciones.EstadoReservaError: La reserva debe estar confirmada antes de procesarse.
+2026-11-19 22:49:53 | ERROR | Error controlado en operación 9: La duración de la reserva debe ser positiva.
+Traceback (most recent call last):
+  File "c:\Users\usuario\Downloads\Software_FJ_Proyecto_Completo\Software_FJ\main.py", line 51, in ejecutar_operacion
+    resultado = funcion()
+  File "c:\Users\usuario\Downloads\Software_FJ_Proyecto_Completo\Software_FJ\main.py", line 132, in <lambda>
+    lambda: Reserva("R003", cliente1, asesoria, -2)
+            ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\usuario\Downloads\Software_FJ_Proyecto_Completo\Software_FJ\reservas.py", line 18, in __init__
+    raise ValidacionError("La duración de la reserva debe ser positiva.")
+excepciones.ValidacionError: La duración de la reserva debe ser positiva.
+2026-11-19 22:49:53 | INFO | Servicio registrado: Sala ocupada
+2026-11-19 22:49:53 | INFO | Reserva R004 creada para el cliente Leysman Riaño.
+2026-11-19 22:49:53 | INFO | Reserva agregada al sistema: R004
+2026-11-19 22:49:53 | ERROR | Error controlado en operación 10: El servicio 'Sala ocupada' no está disponible.
+Traceback (most recent call last):
+  File "c:\Users\usuario\Downloads\Software_FJ_Proyecto_Completo\Software_FJ\main.py", line 51, in ejecutar_operacion
+    resultado = funcion()
+  File "c:\Users\usuario\Downloads\Software_FJ_Proyecto_Completo\Software_FJ\main.py", line 142, in op10
+    reserva.confirmar()
+    ~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\usuario\Downloads\Software_FJ_Proyecto_Completo\Software_FJ\reservas.py", line 39, in confirmar
+    self._servicio.verificar_disponibilidad()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\usuario\Downloads\Software_FJ_Proyecto_Completo\Software_FJ\servicios.py", line 33, in verificar_disponibilidad
+    raise ServicioNoDisponibleError(
+        f"El servicio '{self.nombre}' no está disponible."
+    )
+excepciones.ServicioNoDisponibleError: El servicio 'Sala ocupada' no está disponible.
+2026-11-19 22:49:53 | INFO | Reserva R005 creada para el cliente Carlos Gómez.
+2026-11-19 22:49:53 | INFO | Reserva agregada al sistema: R005
+2026-11-19 22:49:53 | INFO | Reserva R005 cancelada.
+2026-11-19 22:49:53 | ERROR | Error controlado en operación 12: Impuesto y descuento deben estar entre 0 y 1.
+Traceback (most recent call last):
+  File "c:\Users\usuario\Downloads\Software_FJ_Proyecto_Completo\Software_FJ\main.py", line 51, in ejecutar_operacion
+    resultado = funcion()
+  File "c:\Users\usuario\Downloads\Software_FJ_Proyecto_Completo\Software_FJ\main.py", line 157, in <lambda>
+    lambda: sala.calcular_costo(2, impuesto=1.5)
+            ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\usuario\Downloads\Software_FJ_Proyecto_Completo\Software_FJ\servicios.py", line 48, in calcular_costo
+    raise ValidacionError("Impuesto y descuento deben estar entre 0 y 1.")
+excepciones.ValidacionError: Impuesto y descuento deben estar entre 0 y 1.
+2026-11-19 22:49:53 | INFO | Finalización de la demostración Software FJ.
